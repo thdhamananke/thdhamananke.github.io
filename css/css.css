@@ -1,0 +1,731 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+    background: linear-gradient(rgba(39, 35, 35, 0.5), rgba(74, 71, 71, 0.6)), url("../img/bg.jpg") center / cover no-repeat !important;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100vh;
+}
+
+body::-webkit-scrollbar{
+    width: 0px;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: 270px auto 90px;
+    gap: 5px;
+    margin: 0px 10px;
+}
+/* -------------------gauche------------------------ */
+/* informatition */
+.image-container {
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+
+.wave-animation {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    animation: wave 2s infinite linear;
+}
+
+@keyframes wave {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.wave-animation img {
+    width: 100%;
+    height: auto;
+}
+
+.gauche{
+    width: 100%;
+    height: 100vh;
+    background: #24242f;
+}
+
+.info {
+    text-align: center;
+    height: auto;
+    background:linear-gradient(rgba(30, 30, 25, 0.5), rgba(79, 79, 110, 0.5));
+}
+
+.decouvert a:hover {
+    color: white;
+    background: green;
+}
+
+.info p,H6{
+    font-size: 17px;
+    margin-top: 4px;
+}
+.info p{
+    color: gainsboro;
+}
+.style{
+    color: gainsboro;
+}
+.info img{
+    height:100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* langages */
+
+.all-langues{
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	display: flex;
+    padding: 10px;
+    padding-top: 5px;
+    gap: 20px;
+}
+
+.all-langues h6{
+    font-size: 12px !important;
+}
+
+.circles-wrap{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #1b1b25;
+
+}
+
+.circles-wrap h5{
+	text-align: center;
+	color: white;
+	font-weight: 500;
+    font-size: 14px;
+}
+.circles {
+	display: flex;
+    position: relative;
+    clear: both;
+}
+
+.circles-wrap .circles .marks,
+.circles-wrap .circles .fills-1,
+.circles-wrap .circles .fills-2,
+.circles-wrap .circles .fills-3,
+.circles-wrap .circles .fills-4 {
+	width:  40px;
+	height:40px;
+	position: absolute;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+}
+
+.circles-wrap .circles .marks{
+	clip: rect(0px,  40px, 40px, 20px) !important;
+}
+/* animination */
+/* 1 */
+.marks .fills-1{
+	clip: rect(0px, 20px, 40px, 0px);
+	background-color:#fcb900;
+}
+.marks.plein-1,
+.circles .fills-1{
+	animation: fills-1 ease-in-out 2s;
+	transform: rotate(180deg);
+}
+@keyframes fills-1 {
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(180deg);}
+}
+/* 2 */
+.marks .fills-2{
+	clip: rect(0px, 20px, 40px, 0px);
+	background-color:#fcb900;
+}
+.marks.plein-2,
+.circles .fills-2{
+	animation: fills-2 ease-in-out 2s;
+	transform: rotate(90deg);
+}
+@keyframes fills-2 {
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(90deg);}
+}
+
+/* 3 */
+.marks .fills-3{
+	clip: rect(0px, 20px, 40px, 0px);
+	background-color:#fcb900;
+}
+.marks.plein-3,
+.circles .fills-3{
+	animation: fills-3 ease-in-out 2s;
+	transform: rotate(180deg);
+}
+@keyframes fills-3 {
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(180deg);}
+}
+/* 4 */
+.marks .fills-4 {
+    clip: rect(0px, 20px, 40px, 0px);
+    background-color: #fcb900;
+}
+
+.marks.plein-4,
+.circles .fills-4 {
+    animation: fills-4 ease-in-out 2s;
+    transform: rotate(125deg);
+}
+
+@keyframes fills-4 {
+    0% {transform: rotate(0deg);}
+    100%{transform: rotate(125deg);}
+}
+.aside-circles{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #20202a;
+	margin-top: 5px;
+	margin-left: 5px;
+	z-index: 100;
+	font-size: 8px;
+	font-weight: 700;
+	color: white;
+}
+/* fin */
+
+/* languages de programmations */
+.langages .lang{
+    padding: 7px 0px;
+}
+.langag{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* experience */
+
+
+.exp{
+    display: flex;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+.exp i{
+    margin-right: 10px;
+}
+
+hr{
+    margin: 20px 0px;
+    color: rgb(158, 158, 158);
+}
+
+progress {
+    /* -webkit-appearance: none; */
+    height: 5px;
+    width: 100%;
+} 
+
+::-webkit-progress-value {
+    background-color:#fcb900;
+}
+
+/* autre */
+.autre{
+    height: 52%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.autre::-webkit-scrollbar{
+    width: 0px;
+}
+/*  liens*/
+.social{
+    height: 8%;
+    background:linear-gradient(rgba(30, 30, 25, 0.5), rgba(79, 79, 110, 0.5));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a{
+    text-decoration: none;
+}
+/* -------------------------------centre------------------------------ */
+.centre {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background:linear-gradient(to bottom, transparent,rgba(30,30,40,1), rgba(30,30,40,0.7));
+    color: white;
+}
+
+.centre::-webkit-scrollbar{
+    width: 0px;
+}
+
+.decouvert{
+    background: linear-gradient(to bottom, transparent,rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../img/bg.jpg') center / cover no-repeat !important;
+    height: 350px !important;
+    width: 100% !important;
+    padding: 40px !important;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.btn{
+    height: 50px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.btn:hover{
+    background: green;
+    transition: .5s;
+    transform: translateY(1px);
+    border: 0;
+    color: white;
+}
+
+.pub{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+h5{
+    font-size: 18px;
+}
+.pub h3{
+    font-size: 22px;
+}
+.competances{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px;
+}
+.competance{
+    background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+    color: rgb(184, 183, 183);
+}
+.competance .commander{
+    font-size: 12px;
+    font-weight: bold;
+}
+.commander:hover{
+    color: yellow;
+    transition: .9s;
+    transform: translateY(-10px);
+}
+
+.foot{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+}
+
+
+.about-foot {   
+    margin-top: 170px !important;
+}
+
+/* -----------------------------droite-------------------------------- */
+.droite{
+    font-size: 12px;
+    width: 100%;
+    height: 100vh;
+    background: #24242f;
+}
+.h3{
+    font-family:'Courier New', Courier, monospace;
+    transform: translateY(520px); 
+}
+
+.nav a{
+    color: rgb(184, 183, 183);
+    text-decoration: none;
+    transition: .5s;
+}
+
+.nav a:hover{
+    color: white;
+}
+
+.nav {
+    transform: translateX(300px);
+    position:absolute;
+    width:150px;
+    height: 100vh;
+    background:#24242f;
+    padding-top: 80px;
+    transition: .3s;
+}
+
+.close {
+    display:block;
+    position:absolute;
+    top:10px;
+    padding-left: 30px;
+    color: white;
+    font-size: 2.5em;
+}
+
+.closes{
+    top:0px;
+    display:block;
+    position:absolute;
+    background:linear-gradient(rgba(30, 30, 25, 0.5), rgba(79, 79, 110, 0.5));
+    width: 100%;
+    height: 50px;
+}
+.menus{
+    top:0px;
+    background:linear-gradient(rgba(30, 30, 25,0.5), rgba(79, 79, 110, 0.5));
+    height: 50px;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+@media screen and (max-width : 1500px) {
+
+    .info {
+        padding: 10px !important;
+    }
+    
+    
+    .gauche h5{
+        font-size: 14px !important;
+    }
+
+    .pub {
+        margin: 20px !important;
+    }
+
+    .info {
+        padding: 20px !important;
+    }
+    
+}
+@media screen and (max-width : 1200px) {
+    
+    h1{
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .pub h3,
+    .pub p {
+        font-size: 16px !important;
+    }
+
+    .decouvert p{
+        font-size: 18px;
+    }
+    .competance h6{
+        font-size: 16px;
+    }
+    .competance .commander{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width : 1120px) {
+    h1{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .decouvert p{
+        font-size: 14px;
+    }
+    .pub h3,h6{
+        font-size: 20px;
+    }
+    .competance h6,p{
+        font-size: 14px;
+    }
+    .competance .commander{
+        font-size: 8px;
+    }
+    .info h6,p{
+        font-size: 13px !important;
+    }
+
+    .info img{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+    .gauche p{
+        font-size: 12px !important;
+    }
+    .social {
+        height: 50px;
+        width: 100%;
+    }
+    .gauche{
+       width: 200px;
+       height: 100vh;
+    }
+    .content{
+        display: grid;
+        grid-template-columns: 200px auto 80px;
+        gap: 20px;
+    }
+
+    /* .all-langues {
+        display: flex !important;
+        flex-direction: column;
+        gap: 50px !important;
+        margin-left: 30px;
+    } */
+    .all-langues {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width : 1000px) {
+
+    .galerie {
+        font-size: 16px !important;
+    }
+
+    .pub{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .competances{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .competance h6,p{
+        font-size: 16px;
+    }
+    .competance .commander{
+        font-size: 12px;
+    }
+ 
+}
+
+@media screen and (max-width : 950px) {
+    h1{
+        font-size: 20px;
+        font-weight: bold;
+    }
+   
+    .decouvert p, 
+    .decouvert a{
+        font-size: 17px !important;
+    }
+
+    .decouvert h1 {
+        font-size: 30px !important;
+    }
+    .btn{
+        font-size: 10px !important;
+    }
+    .pub h3,h5{
+        font-size: 18px;
+    }
+    .decouvert{
+        height: 300px !important;
+        width: 100%;
+        padding: 30px;
+    }
+    .competance h6,p{
+        font-size: 14px !important;
+    }
+    .competance .commander{
+        font-size: 10px !important;
+    }
+
+    .foot p {
+        font-size: 13px !important;
+    }
+
+}
+
+@media screen and (max-width : 885px) {
+    .competances,.foot{
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .competance .commander{
+        font-size: 12px !important;
+     }
+    .competance h6,p{
+        font-size: 16px !important;
+    }
+    
+    .info p {
+        font-size: 13px !important;
+    }
+}
+
+@media screen and (max-width : 800px) {
+    h1{
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .decouvert p,
+    .decouvert a {
+        font-size: 14px !important;
+    }
+
+    .decouvert h1 {
+        font-size: 28px !important;
+    }
+
+    .pub h3,
+    .pub p{
+        font-size: 12px !important;
+    }
+    .pub{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+}
+
+@media screen and (max-width : 760px){
+    .foot p{
+        font-size: 12px !important;
+    }
+
+    .decouvert p,
+    .decouvert a {
+        font-size: 12px !important;
+        height: 40px;
+    }
+
+    .decouvert h1 {
+        font-size: 23px !important;
+    }
+
+    .galerie {
+        font-size: 11px !important;
+    }
+}
+
+@media screen and (max-width : 650px) {
+    h1{
+        font-size: 9px !important;
+        font-weight: bold;
+    }
+    .decouvert h1{
+        font-size: 20px !important;
+    }
+    
+    .decouvert p,
+    .decouvert a {
+        font-size: 10px !important;
+        height: 30px;
+        margin-top: 5px;
+    }
+   
+    .galerie {
+        font-size: 8px !important;
+    }
+}
+
+
+@media screen and (max-width : 600px) {
+
+    .decouvert a {
+        margin-top: 35px !important;
+    }
+
+    .foot p {
+        font-size: 8px !important;
+    }
+    
+
+}
+
+@media only screen and (max-width : 583px) {
+    h1{
+        font-size: 6px !important;
+        font-weight: bold;
+    }
+    .decouvert h1 {
+        font-size: 14px !important;
+    }
+
+    .decouvert p,
+    .decouvert a {
+        font-size: 8px !important;
+        height: 30px;
+        margin-top: 5px;
+    }
+
+    .pub h3,
+    .pub p{
+        font-size: 8px !important;
+    }
+
+    .competance h6,p,.mes{
+        font-size: 8px !important;
+    }
+    
+    .competance .commander{
+        font-size: 8px !important;
+    }
+   
+}
+@media only screen and (max-width:580px) {
+
+    .decouvert a {
+        font-size: 8px !important;
+        height: 50px;
+        display: none;
+    }
+
+    .galerie {
+        font-size: 5px !important;
+    }
+}

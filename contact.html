@@ -27,8 +27,8 @@
             </div>
             <div class="autre p-3">
                 <div class="adresse">
-                    <p class="text-white fw-bold">Residence :<span class="style float-end fw-light">Cosa Bantounka 2 </span></p>
-                    <p class="text-white fw-bold">City :<span class="style float-end fw-light">Conakry </span></p>
+                    <p class="text-white fw-bold">Adresse :<span class="style float-end fw-light">23, Avenue de Bruxelles </span></p>
+                    <p class="text-white fw-bold">Ville(Pays) :<span class="style float-end fw-light">Caen(France) </span></p>
                     <p class="text-white fw-bold">Age :<span class="style float-end fw-light">22 ans </span></p>
                 </div>
                 <hr>
@@ -166,60 +166,46 @@
             <div class="container-fluid">
                 <div class="row text-center fw-bold mt-5">
                     <div class="col-10 m-auto">
-                        <h1 class="fw-bold ">Contact with me !!</h1>
-                        <p class="fs-5">Here you'll find different means of communication to which you can reach me. Look at which one is the easiest or suitable for you so that I'am informed of your suggestions or projects or concerns ...</p>
-                        &lt;<i>Read me</i>&gt; <span class="thankus text-primary fs-5"></span> &lt;<i>Read me</i>&gt;
+                        <h2 class="fw-bold ">Contact with me !!</h2>
+                        <p class="fs-6">Here you'll find different means of communication to which you can reach me. Look at which one is the easiest or suitable for you so that I'am informed of your suggestions or projects or concerns ...</p>
+                        &lt;<i>Read me</i>&gt; <span class="thankus text-primary fs-6"></span> &lt;<i>Read me</i>&gt;
                     </div>
-                </div>
-
-                <div class="col-md-11 m-auto text-center mt-4 py-0">
-                    <?php if (!empty($error)) : ?>
-                        <div id="success-message" class="alert alert-danger">
-                            <strong><?= $error; ?></strong>
-                        </div>
-                    <?php endif; ?>
-
                 </div>
 
                 <div class="row p-5">
                     <div class="col-6 p-3 card shadow">
-                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <form id="emailForm">
+                            <input type="hidden" id="fromName" name="to_name" value="Thierno Hammady DIALLO" />
 
                             <div class="form-floating mt-3">
-                                <input class="form-control <?= isset($errors['name']) ? 'is-invalid' : ''; ?>" type="text" name="name" id="floatingInput" placeholder="diallo@gmail.com" value="<?= isset($name) ? $name : ''; ?>">
-                                <label for="floatingInput">Your full name </label>
-                                <div class="invalid-feedback"><?= isset($errors['name']) ? $errors['name'] : ''; ?></div>
+                                <input class="form-control" type="text" name="from_name" id="userName" placeholder="Votre nom complet">
+                                <label for="userName">Votre nom complet</label>
                             </div>
-
+                    
                             <div class="form-floating mt-3">
-                                <input class="form-control <?= isset($errors['phone']) ? 'is-invalid' : ''; ?>" type="tel" name="phone" id="floatingphone" placeholder="00224 623 229 188" value="<?= isset($phone) ? $phone : ''; ?>">
-                                <label for="floatingphone">Your phone number </label>
-                                <div class="invalid-feedback"><?= isset($errors['phone']) ? $errors['phone'] : ''; ?></div>
+                                <input class="form-control" type="email" name="user_email" id="userEmail" placeholder="Votre adresse email" >
+                                <label for="userEmail">Votre adresse email</label>
                             </div>
-
+                    
                             <div class="form-floating mt-3">
-                                <input class="form-control <?= isset($errors['email']) ? 'is-invalid' : ''; ?>" type="email" name="email" id="floatingInput" placeholder="diallo@gmail.com" value="<?= isset($email) ? $email : ''; ?>">
-                                <label for="floatingInput">Email address</label>
-                                <div class="invalid-feedback"><?= isset($errors['email']) ? $errors['email'] : ''; ?></div>
+                                <textarea class="form-control" name="message" id="userMessage" placeholder="Votre message" ></textarea>
+                                <label for="userMessage">Votre message</label>
                             </div>
-
-                            <div class="form-floating mt-3">
-                                <textarea class="form-control <?= isset($errors['messages']) ? 'is-invalid' : ''; ?>" type="text" cols='10' name="messages" id="floatingmessages" placeholder="Nom du messages"><?= isset($messages) ? $messages : ''; ?></textarea>
-                                <label for="floatingmessages">Your message here</label>
-                                <div class="invalid-feedback"><?= isset($errors['messages']) ? $errors['messages'] : ''; ?></div>
-                            </div>
-
-                            <button name="send" type="submit" class="btn btn-primary mt-5 text-center">Send me your ...</button>
+                    
+                            <button type="submit" class="btn btn-primary mt-4">Envoyer</button>
                         </form>
+
+                        <div id="statusMessage" class="mt-3"></div>
                     </div>
+                    
                     <div class="col-6 px-5">
-                        <p class="mb-3 text-center fs-7">Send me your message, idea, project or concerns to the form 👈👈 or look below 👇</p>
+                        <p class="mb-3 text-center fs-7">Send me your message, idea, project or concerns to the form 👈 or look below 👇</p>
 
                         <div class="d-flex flex-column py-4 gap-2 border-top">
                             <h5><strong>You can reach me by these </strong></h5>
-                            <span><i class="fa fa-location-dot me-2"></i> Rue 124 kipé Conakry City in Guinea</span>
+                            <span><i class="fa fa-location-dot me-2"></i> 23, Avenue de Bruxelles</span>
                             <span><i class="fa fa-envelope me-2" aria-hidden="true"></i> hamanankethd9188@gmail.com</span>
-                            <span><i class="fa fa-phone me-2"></i> +224 623 229 188 / 00224 629 722 633</span>
+                            <span><i class="fa fa-phone me-2"></i> +33 759 840 773</span>
                             <span><i class="fa-brands fa-whatsapp me-2"></i>+224 623 229 188</span>
                             <span><i class="fa-brands fa-telegram-plane me-2"></i> +224 623 229 188</span>
                         </div>
@@ -237,10 +223,10 @@
             <!-- footer -->
             <div class="row text-center p-2 foot">
                 <div class="col-lg-6 col-md-12 col-sm-12">
-                    <p>©2023 THD Hamana - All Rights Reserved.</p>
+                    <p>©2023 THD Hamana-Portfolio - All Rights Reserved.</p>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
-                    <p>Email: jallohth9188@gmail.com</p>
+                    <p>Email: hamanankethd9188@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -254,10 +240,10 @@
                             <i class="close fas fa-times"></i>
                         </div>
                         <div class="link d-flex flex-column fs-6">
-                            <a href="index.php" class="ps-2 p-1">Home</a>
-                            <a href="about.php" class="ps-2 p-1">About me</a>
-                            <a href="galerie.php" class="ps-2 p-1">Galerie</a>
-                            <a href="contact.php" class="ps-2 p-1">Contact</a>
+                            <a href="index.html" class="ps-2 p-1">Home</a>
+                            <a href="about.html" class="ps-2 p-1">About me</a>
+                            <a href="galerie.html" class="ps-2 p-1">Galerie</a>
+                            <a href="contact.html" class="ps-2 p-1">Contact</a>
                         </div>
                     </div>
                     <div class="menus">
@@ -271,8 +257,7 @@
         </div>
     </div>
 
-    <script src="/js/js.js"></script>
-    <script src="js/all.js"></script>
+    <script src="js/js.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <script>
@@ -297,8 +282,84 @@
         }
 
         const pContent = document.querySelector('.thankus');
-        typeWriter("Thank you for contacting me and for your hospitality", pContent, 100);
+        typeWriter("Thank you for your hospitality and contacting me", pContent, 100);
     </script>
+
+    <!-- pour l'envoi du mail en utlisant emailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        // Initialisation d'EmailJS avec votre clé publique
+        (function() {
+            emailjs.init("E8EOXAon88UUH8wy9");
+        })();
+
+        // Fonction pour afficher un message d'erreur
+        function showError(message) {
+            const statusMessage = document.getElementById('statusMessage');
+            statusMessage.textContent = message;
+            statusMessage.style.color = "red";
+
+            // Masquer le message après 5 secondes
+            setTimeout(function() {
+                statusMessage.textContent = "";
+            }, 5000);
+        }
+
+        // Gestion de la soumission du formulaire
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Récupérer les valeurs des champs
+            const userName = document.getElementById('userName').value.trim();
+            const userEmail = document.getElementById('userEmail').value.trim();
+            const userMessage = document.getElementById('userMessage').value.trim();
+            const fromName = document.getElementById('fromName').value; // Champ caché
+
+            // Validation des champs
+            if (!userName) {
+                showError("Veillez entrer votre nom complet.");
+                return;
+            }
+            if (!userEmail) {
+                showError("Veillez entrer votre Adresse email.");
+                return;
+            }
+            if (!userMessage) {
+                showError("Veillez enregistrer votre message.");
+                return;
+            }
+
+            // Validation de l'email avec une regex simple
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(userEmail)) {
+                showError("Veuillez entrer une adresse email valide.");
+                return;
+            }
+
+            // Si tout est valide, envoyer le formulaire via EmailJS
+            const serviceID = "service_mia9r0c";
+            const templateID = "template_umtpmxj";
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    const statusMessage = document.getElementById('statusMessage');
+                    statusMessage.textContent = "Votre message a été envoyé avec succès !";
+                    statusMessage.style.color = "green";
+
+                    // Réinitialiser le formulaire
+                    this.reset();
+
+                    // Masquer le message après 5 secondes
+                    setTimeout(function() {
+                        statusMessage.textContent = "";
+                    }, 5000);
+                }, (error) => {
+                    showError("Échec de l'envoi du message. Veuillez réessayer.");
+                    console.error('Erreur:', error);
+                });
+        });
+    </script>
+
 </body>
 
 </html>

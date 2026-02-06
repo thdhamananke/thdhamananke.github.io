@@ -141,7 +141,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="flex flex-col sm:flex-row items-center gap-3 text-[11px] font-mono text-slate-400">
                 <a href="mailto:dialloth9188@gmail.com" className="hover:text-cyan-400 transition-colors">dialloth9188@gmail.com</a>
                 <span className="hidden sm:block text-white/10">|</span>
-                <a href="tel:+33759840773" className="hover:text-cyan-400 transition-colors">+33 7 59 84 07 73</a>
+                <a href="tel:+33759840700" className="hover:text-cyan-400 transition-colors">+33 7 59 84 07 00</a>
               </div>
             </header>
 

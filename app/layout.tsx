@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
-import Link from "next/link";
-
+import Navbar from "./components/Navbar"; 
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "TH. DIALLO | Portfolio",
+  title: "TH DIALLO | Portfolio",
   description: "Ingénieur en Sécurité & Technologies Informatiques",
 };
 
@@ -25,14 +24,14 @@ const CircularProgress = ({ percentage, label }: { percentage: number; label: st
           <circle
             cx="50" cy="50" r={radius}
             stroke="currentColor"
-            strokeWidth="8"
+            strokeWidth="10"
             fill="transparent"
             className="text-slate-800"
           />
           <circle
             cx="50" cy="50" r={radius}
             stroke="currentColor"
-            strokeWidth="8"
+            strokeWidth="10"
             fill="transparent"
             strokeDasharray={dashArray}
             strokeDashoffset={dashOffset}
@@ -51,6 +50,7 @@ const CircularProgress = ({ percentage, label }: { percentage: number; label: st
 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+
   return (
     <html lang="fr">
       <head>
@@ -63,9 +63,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <aside className="hidden lg:flex flex-col w-[250px] min-w-[250px] bg-[#0d1629] h-full border-r border-white/5">
             <div className="flex-none p-8 text-center border-b border-white/5 bg-[#111a2e]">
               <div className="w-20 h-20 relative mx-auto mb-4 rounded-full overflow-hidden border-3 border-cyan-500 shadow-lg">
-                <Image src="/thd.jpeg" alt="Profil" fill className="object-cover" />
+                <Image src="/thd.png" width={100} height={50} alt="Profil" className="object-cover" />
               </div>
-              <h2 className="text-white font-bold text-sm uppercase leading-tight">T. Hammady DIALLO</h2>
+              <h2 className="text-white font-bold text-sm uppercase leading-tight">Thierno Hammady DIALLO</h2>
               <p className="text-[9px] text-cyan-400 font-mono mt-2 uppercase tracking-widest leading-tight">
                 Ingénieur en Sécurité & Tech
               </p>
@@ -91,27 +91,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <CircularProgress percentage={100} label="Français" />
                   <CircularProgress percentage={60} label="Anglais" />
                   <CircularProgress percentage={100} label="Poular" />
-                  <CircularProgress percentage={70} label="Malinke" />
+                  <CircularProgress percentage={40} label="Arabe" />
                 </div>
               </div>
 
               <hr className="border-white/5" />
 
-              {/* Compétences Rapides (Optionnel mais pro) */}
-              {/* <div className="space-y-2 text-[10px]">
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-cyan-500 text-[8px]"></i>
-                  <span>Windows / Linux Server</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-cyan-500 text-[8px]"></i>
-                  <span>Cybersécurité N1/N2</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-cyan-500 text-[8px]"></i>
-                  <span>React / Next.js / Tailwind</span>
-                </div>
-              </div> */}
             </div>
 
             {/* réseaux sociaux */}
@@ -137,7 +122,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="flex-1 h-full overflow-y-auto flex flex-col bg-[#0a1120]">
             
             <header className="flex flex-col md:flex-row justify-between items-center p-4 lg:p-6 bg-[#0d1629] border-b border-white/5 sticky top-0 z-50 gap-4 text-center">
-              <h1 className="text-cyan-400 font-bold text-xl uppercase tracking-tighter">TH. DIALLO</h1>
+              <h1 className="text-cyan-400 font-bold text-2xl uppercase tracking-tighter"><span className="text-white">TH </span>DIALLO</h1>
               <div className="flex flex-col sm:flex-row items-center gap-3 text-[11px] font-mono text-slate-400">
                 <a href="mailto:dialloth9188@gmail.com" className="hover:text-cyan-400 transition-colors">dialloth9188@gmail.com</a>
                 <span className="hidden sm:block text-white/10">|</span>
@@ -145,21 +130,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
             </header>
 
-            <nav className="sticky top-0 z-[100] bg-[#0a1120]/80 backdrop-blur-md border-b border-white/5 flex flex-row lg:flex-row justify-center lg:justify-end items-center gap-4 lg:gap-8 p-6 lg:px-12 text-sm font-medium">
-              <Link href="/" className="hover:text-cyan-400 transition">Accueil</Link>
-              <Link href="/portfolio" className="hover:text-white transition">Portfolio</Link>
-              <Link href="/parcours" className="hover:text-white transition">Parcours</Link>
-              <Link href="/contact">
-                <button className="border border-cyan-500 text-cyan-500 px-4 py-2 rounded-md hover:bg-cyan-500/10 transition">
-                  Me contacter
-                </button>
-              </Link>
-            </nav>
+            <Navbar />
 
             {/* le contenu dynamique */}
             <div className="flex-1">
               {children}
             </div>
+
+            {/* le footer */}
+            <footer className="p-8 border-t border-white/5 text-center text-xs text-slate-400 tracking-widest">
+              © {new Date().getFullYear()} TH <span className="text-cyan-400 font-bold">DIALLO</span> — Futur Ingénieur Cybersécurité. 
+            </footer>
           </main>
 
           {/* bloc droit */}
